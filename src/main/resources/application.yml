@@ -1,0 +1,18 @@
+server:
+  port: 8081
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/budgetBuddy
+
+keycloak:
+  realm: dev
+  auth-server-url: http://localhost:8080
+  resource: budget_buddy_dev
+  credentials:
+    secret: sua-chave-secreta
+  use-resource-role-mappings: true
+
