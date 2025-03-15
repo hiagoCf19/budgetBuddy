@@ -17,6 +17,7 @@ public class TesteController {
 
     @GetMapping("/user")
     public String userEndpoint(Authentication authentication) {
+        System.out.println(authentication);
         return "Usuário autenticado: " + authentication.getName();
     }
 

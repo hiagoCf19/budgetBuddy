@@ -1,0 +1,15 @@
+CREATE TABLE transactions (
+    id UUID NOT NULL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    type VARCHAR(255) NOT NULL,
+    amount DECIMAL(10, 2) NOT NULL,
+    category VARCHAR(255) NOT NULL,
+    payment_method VARCHAR(255) NOT NULL,
+    date TIMESTAMP NOT NULL,
+    created_at TIMESTAMP DEFAULT  CURRENT_TIMESTAMP NOT NULL,
+    updated_at TIMESTAMP DEFAULT  CURRENT_TIMESTAMP NOT NULL,
+    user_id UUID NOT NULL,
+    CONSTRAINT fk_user
+      FOREIGN KEY (user_id)
+      REFERENCES users(id)
+);
